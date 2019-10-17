@@ -23,18 +23,24 @@ Assume hot dogs come in packages of 10, and the hot dog buns come in package of 
     Buns left over: 0
     
 # Pseudocode
+    DOG_PACKAGE = 10
+    BUN_PACKAGE = 8
     Prompt user for the number of people attending
     Prompt user for the number of hot dogs allocated to each person
     Calculate the total number of hot dogs needed
       dogs needed = people attending * dogs allocated
     Calculate the minimum number of hot dog packages required
-      dog packages required = dogs needed / 10
-    Calculate the amount of leftover hot dogs
-      leftover dogs = dogs needed % 10
-    Calculate the total number of bun packages required
-      bun packages required = dogs needed / 8
+      dog packages required = dogs needed // DOG_PACKAGE
+    Calculate the total number of dogs on hand
+        total dogs = dog packages required * DOG_PACKAGE
+    Calculate the amount of leftover dogs
+        leftover dogs = total dogs - dogs needed
+    Calculate the minimum number of bun packages required
+        bun packages required = dogs needed // BUN_PACKAGE
+    Calculate the total number of buns on hand
+        total buns = bun packages required * BUN_PACKAGE
     Calculate the leftover buns
-      leftover buns = dogs needed % 8
+        leftover buns = total buns - dogs needed
     Print the minimum number of hot dog packages needed
     Print the minimum number of bun packages needed
     Print the number of leftover hot dogs
