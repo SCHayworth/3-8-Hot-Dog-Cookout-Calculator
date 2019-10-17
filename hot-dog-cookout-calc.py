@@ -27,7 +27,7 @@ dogs_needed = attending * dogs_per_person
 # Check whether the amount of hot dogs needed is evenly divisible by the number of dogs in a package
 # if yes, divide by the number of hotdogs in the package
 if dogs_needed % DOG_PACKAGE == 0:
-    minimum_dogs = dogs_needed / DOG_PACKAGE
+    minimum_dogs = dogs_needed // DOG_PACKAGE
 
 # If not, floor divide by the number in a package of hot dogs and add 1
 else:
@@ -36,7 +36,7 @@ else:
 # Check whether the amount of buns needed is evenly divisible by the number of buns in a packages
 # If yes, divide by the number of buns in a package
 if dogs_needed % BUN_PACKAGE == 0:
-    minimum_buns = dogs_needed / BUN_PACKAGE
+    minimum_buns = dogs_needed // BUN_PACKAGE
 
 # If not, floor divide by the number of buns in a package and add 1
 else:
@@ -56,4 +56,4 @@ leftover_buns = total_buns - dogs_needed
 print(f'Minimum packages of hot dogs needed: {minimum_dogs}')
 print(f'Minimum packages of buns needed: {minimum_buns}')
 print(f'Hot dogs left over: {leftover_dogs}')
-print(f'Buns left over: {leftover_buns}')  
+print(f'Buns left over: {leftover_buns}')
