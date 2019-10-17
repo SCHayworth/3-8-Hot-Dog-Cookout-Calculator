@@ -22,19 +22,25 @@ attending = int(input('Number of people attending the cookout: '))
 dogs_per_person = int(input('Number of hot dogs per person: '))
 
 # Calculate the total hot dogs needed
-total_dogs = attending * dogs_per_person
+dogs_needed = attending * dogs_per_person
 
 # Calculate the minimum number of hot dog packages needed
-dog_minimum = total_dogs / DOG_PACKAGE
+dog_minimum = dogs_needed // DOG_PACKAGE
+
+# Calculate the total amount of hot dogs on hand
+total_dogs = dog_minumum * DOG_PACKAGE
 
 # Calculate the leftover hot dogs
-leftover_dogs = total_dogs % DOG_PACKAGE
+leftover_dogs = total_dogs - dogs_needed
 
 # Calculate the minimum number of bun packages needed
-bun_minimum = total_dogs / BUN_PACKAGE
+bun_minimum = dogs_needed // BUN_PACKAGE
+
+# Calculate the total number of buns on hand
+total_buns = bun_minimum * BUN_PACKAGE
 
 # Calculate the number of leftover buns
-leftover_buns = total_dogs % BUN_PACKAGE
+leftover_buns = total_buns - dogs_needed
 
 # Display the minimum packages of hot dogs and buns needed, and how many of each will be left over
 print(f'Minimum packages of hot dogs needed: {dog_minimum}')
