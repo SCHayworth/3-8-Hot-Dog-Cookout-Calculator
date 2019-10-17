@@ -28,7 +28,7 @@ dogs_needed = attending * dogs_per_person
 dog_minimum = dogs_needed // DOG_PACKAGE
 
 # Calculate the total amount of hot dogs on hand
-total_dogs = dog_minumum * DOG_PACKAGE
+total_dogs = dog_minimum * DOG_PACKAGE
 
 # Calculate the leftover hot dogs
 leftover_dogs = total_dogs - dogs_needed
