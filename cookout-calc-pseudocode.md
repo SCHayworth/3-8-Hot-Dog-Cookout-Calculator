@@ -26,23 +26,24 @@ Assume hot dogs come in packages of 10, and the hot dog buns come in package of 
     DOG_PACKAGE = 10
     BUN_PACKAGE = 8
     Prompt user for the number of people attending
-    Prompt user for the number of hot dogs allocated to each person
-    Calculate the total number of hot dogs needed
-      dogs needed = people attending * dogs allocated
-    Calculate the minimum number of hot dog packages required
-      dog packages required = dogs needed // DOG_PACKAGE
-    Calculate the total number of dogs on hand
-        total dogs = dog packages required * DOG_PACKAGE
-    Calculate the amount of leftover dogs
+    Prompt user for the number of hot dogs for each person
+    Calculate the total number of hot dogs and buns needed
+        dogs needed = people attending * dogs per person
+    IF dogs needed % DOG_PACKAGE = 0
+        minimum dog packages = dogs needed / DOG_PACKAGE
+    ELSE minimum dog packages = (dogs needed // DOG_PACKAGE) + 1
+    IF dogs needed % BUN_PACKAGE = 0
+        minimum bun packages = dogs needed / BUN_PACKAGE
+    ELSE minimum bun packages = (dogs needed // BUN_PACKAGE) + 1
+    Calculate how many hot dogs there are in total
+        total dogs = minimum dog packages * DOG_PACKAGE
+    Calculate how many hot dogs will be left over
         leftover dogs = total dogs - dogs needed
-    Calculate the minimum number of bun packages required
-        bun packages required = dogs needed // BUN_PACKAGE
-    Calculate the total number of buns on hand
-        total buns = bun packages required * BUN_PACKAGE
-    Calculate the leftover buns
+    Calculate how many buns there are in total
+        total buns = minimum bun packages * BUN_PACKAGE
+    Calculate how many buns will be left over
         leftover buns = total buns - dogs needed
-    Print the minimum number of hot dog packages needed
-    Print the minimum number of bun packages needed
-    Print the number of leftover hot dogs
-    Print the number of leftover buns
-    
+    print minimum dog packages
+    print minimum bun packages
+    print leftover dogs
+    print leftover buns
