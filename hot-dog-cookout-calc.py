@@ -25,7 +25,7 @@ dogs_per_person = int(input('Number of hot dogs per person: '))
 dogs_needed = attending * dogs_per_person
 
 # Check whether the amount of hot dogs needed is evenly divisible by the number of dogs in a package
-# if yes, divide by the number of hotdogs in the package
+# if yes, floor divide by the number of hotdogs in the package
 if dogs_needed % DOG_PACKAGE == 0:
     minimum_dogs = dogs_needed // DOG_PACKAGE
 
@@ -34,7 +34,7 @@ else:
     minimum_dogs = (dogs_needed // DOG_PACKAGE) + 1
 
 # Check whether the amount of buns needed is evenly divisible by the number of buns in a packages
-# If yes, divide by the number of buns in a package
+# If yes, floor divide by the number of buns in a package
 if dogs_needed % BUN_PACKAGE == 0:
     minimum_buns = dogs_needed // BUN_PACKAGE
 
