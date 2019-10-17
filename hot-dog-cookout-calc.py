@@ -31,7 +31,7 @@ dog_minimum = dogs_needed // DOG_PACKAGE
 total_dogs = dog_minimum * DOG_PACKAGE
 
 # Calculate the leftover hot dogs
-leftover_dogs = total_dogs - dogs_needed
+leftover_dogs = dogs_needed - total_dogs
 
 # Calculate the minimum number of bun packages needed
 bun_minimum = dogs_needed // BUN_PACKAGE
@@ -40,7 +40,7 @@ bun_minimum = dogs_needed // BUN_PACKAGE
 total_buns = bun_minimum * BUN_PACKAGE
 
 # Calculate the number of leftover buns
-leftover_buns = total_buns - dogs_needed
+leftover_buns = dogs_needed - total_buns
 
 # Display the minimum packages of hot dogs and buns needed, and how many of each will be left over
 print(f'Minimum packages of hot dogs needed: {dog_minimum}')
